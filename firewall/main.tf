@@ -18,6 +18,7 @@ resource "google_compute_firewall" "default" {
     }
   }
 
-  source_tags = var.source_service_accounts == [] ? var.source_tags : null
-  source_service_accounts = var.source_service_accounts
+  target_tags = var.target_service_accounts == [] ? var.target_tags : null
+  target_service_accounts = var.target_service_accounts
+  source_ranges = var.source_ranges
 }

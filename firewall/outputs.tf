@@ -6,10 +6,10 @@ output "network" {
     value = var.network
 }
 
-output "source_tags" {
-    value = var.source_tags
+output "target_tags" {
+    value = var.target_tags
 }
 
-output "source_service_accounts" {
-    value = var.source_service_accounts
+output "target_service_accounts" {
+    value = var.target_service_accounts
 }

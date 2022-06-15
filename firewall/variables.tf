@@ -8,15 +8,15 @@ variable "network" {
     description = "network the firewall rule should belong to"
 }
 
-variable "source_tags" {
+variable "target_tags" {
     type  = list(string)
-    description = "source tags"
+    description = "target tags"
     default = []
 }
 
-variable "source_service_accounts" {
+variable "target_service_accounts" {
     type  = list(string)
-    description = "source service accounts, it is a best practice to use source service accounts rather than source tags"
+    description = "target service accounts, it is a best practice to use target service accounts rather than target tags"
     default = []
 }
 
@@ -36,4 +36,9 @@ variable "firewall_rules_deny" {
     }))
     description = "Rules that this firewall rule should contain"
     default = {}
+}
+
+variable "source_ranges" {
+    type = list(string)
+    description = "source ranges"
 }
