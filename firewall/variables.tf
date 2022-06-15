@@ -42,3 +42,8 @@ variable "source_ranges" {
     type = list(string)
     description = "source ranges"
 }
+
+variable "project_id" {
+    type = string
+    description = "project id"
+}

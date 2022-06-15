@@ -1,9 +1,13 @@
-output "name" {
+output "router_name" {
     value = var.name
 } 
 
 output "network" {
     value = var.network
+}
+
+output "region" {
+    value = var.region
 }
 
 output "self_link" {

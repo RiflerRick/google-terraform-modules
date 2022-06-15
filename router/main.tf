@@ -2,6 +2,7 @@ resource "google_compute_router" "default" {
   name    = var.name
   network = var.network
   region = var.region
+  project = var.project_id
   dynamic "bgp" {
     for_each = var.bgp.asn == -1 ? [] : [var.bgp]
     content {
