@@ -3,7 +3,7 @@ output "router_name" {
 } 
 
 output "network" {
-    value = var.network
+    value = var.network_name
 }
 
 output "region" {
