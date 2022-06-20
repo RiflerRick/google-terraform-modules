@@ -1,11 +1,11 @@
 variable "name" {
   type        = string
-  description = "Name of firewall rule"
+  description = "Name of the router"
 }
 
-variable "network" {
+variable "network_name" {
     type = string
-    description = "network the firewall rule should belong to"
+    description = "network name the router should go into"
 }
 
 variable "region" {

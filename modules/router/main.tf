@@ -1,6 +1,6 @@
 resource "google_compute_router" "default" {
   name    = var.name
-  network = var.network
+  network = var.network_name
   region = var.region
   project = var.project_id
   dynamic "bgp" {
