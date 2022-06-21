@@ -16,15 +16,9 @@ resource "google_dns_managed_zone" "private-zone" {
         }
       }
   }
-  dynamic "peering_config" {
-    for_each = length(var.peering_target_network_self_links) > 1 ? [var.peering_target_network_self_links[0]] : var.peering_target_network_self_links
-    content {
-        dynamic "target_network" {
-            for_each = var.peering_target_network_self_links
-            content {
-                network_url = target_network.value
-            }
+  peering_config {
+        target_network {
+            network_url = var.peering_target_network_self_link
         }
-    }
     }
 }

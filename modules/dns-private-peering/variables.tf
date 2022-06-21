@@ -17,7 +17,7 @@ variable "network_self_links" {
     description = "network self links of the networks that will have visbility of this managed zone"
 }
 
-variable "peering_target_network_self_links" {
-    type = list(string)
-    description = "peering target network self_links"
+variable "peering_target_network_self_link" {
+    type = string
+    description = "peering target network self_link"
 }
