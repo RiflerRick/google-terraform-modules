@@ -48,5 +48,9 @@ variable "routing_policies" {
             rrdatas = list(string)
         }))
     })
+    default = {
+        geo_routing_policies = []
+        wrr_routing_policies = []
+    }
     description = "The configuration for steering traffic based on query. Now you can specify either Weighted Round Robin(WRR) type or Geolocation(GEO) type"
 }
