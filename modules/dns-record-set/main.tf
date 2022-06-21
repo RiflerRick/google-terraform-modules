@@ -8,7 +8,7 @@ resource "google_dns_record_set" "default" {
 
   rrdatas = length(var.rrdatas) > 0 ? var.rrdatas : null
   dynamic "routing_policy" {
-      for_each = length(var.routing_policies.geo_routing_policies) > 0 ? [var.routing_policies.geo_routing_policies] : []
+      for_each = length(var.geo_routing_policies) > 0 ? [var.geo_routing_policies] : []
       content {
           dynamic "geo" {
               for_each = routing_policy.value
@@ -20,7 +20,7 @@ resource "google_dns_record_set" "default" {
       }
   }
   dynamic "routing_policy" {
-      for_each = length(var.routing_policies.wrr_routing_policies) > 0 ? [var.routing_policies.wrr_routing_policies] : []
+      for_each = length(var.wrr_routing_policies) > 0 ? [var.wrr_routing_policies] : []
       content {
           dynamic "wrr" {
               for_each = routing_policy.value
