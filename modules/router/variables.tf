@@ -13,24 +13,14 @@ variable "region" {
     description = "region in which to create the router"
 }
 
-variable "bgp" {
-    type = object({
-        asn = number
-        advertise_mode = string
-        advertised_groups = list(string)
-        advertised_ip_ranges = list(object({
-            range = string
-        }))
-    })
-    description = "Rules that this firewall rule should contain"
-    default = {
-        asn = -1
-        advertise_mode = ""
-        advertised_groups = []
-        advertised_ip_ranges = [{
-            range = ""
-        }]
-    }
+variable "advertise_all_subnets" {
+    default = true
+    description = "true if you want to advertise all subnets in the region, false will not advertise any subnet, default is true"
+}
+
+variable "bgp_asn" {
+    default = -1
+    description = "bgp asn, only required if advertise_all_subnets is set to true"
 }
 
 variable "project_id" {
