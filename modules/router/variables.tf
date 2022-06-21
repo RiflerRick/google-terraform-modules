@@ -15,11 +15,13 @@ variable "region" {
 
 variable "advertise_all_subnets" {
     default = true
+    type = bool
     description = "true if you want to advertise all subnets in the region, false will not advertise any subnet, default is true"
 }
 
 variable "bgp_asn" {
     default = -1
+    type = number
     description = "bgp asn, only required if advertise_all_subnets is set to true"
 }
 
